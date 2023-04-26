@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-cnihb9@tw!_0ahw*s6whu$*6iue=&b&2$v$g6h203@5fhtr620
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [".vercel.app", ".now.sh"]
 
 
 # Application definition
@@ -141,3 +142,5 @@ MEDIA_ROOT = BASE_DIR / 'static/images'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
